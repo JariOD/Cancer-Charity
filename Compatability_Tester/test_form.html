@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cancer Testing Form</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/
+    Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <style>
+    label {
+      display: block;
+
+    }
+
+    #buttons {
+      height: 48em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      margin-top: -25%;
+
+    }
+
+    select {
+      width: 300px;
+      text-align: center;
+      text-align-last: center;
+    }
+
+    form {
+      text-align: center;
+
+    }
+
+    .butone {
+      margin-left: 120px;
+      width: 300px;
+      height: 30px;
+      border: 1px solid black;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      font-family: 'Spartan', sans-serif;
+
+      background-color: #000000;
+      font-weight: bold;
+      color: #ffffff;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      cursor: pointer;
+    }
+
+
+    body {
+      background-image: url("omaewa.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: #464646;
+      font-size: 0.9vw;
+
+    }
+
+    .logo {
+      position: relative;
+      top: -500px;
+      left: -400px;
+      max-width: 20%;
+      height: auto;
+    }
+
+    .info {
+      position: absolute;
+      font-family: 'Spartan', sans-serif;
+      top: 170px;
+      left: 38px;
+      border: 17px solid rgb(150, 165, 25);
+      background: rgb(150, 165, 25);
+      width: 30%;
+      height: auto;
+      color: white;
+      text-emphasis: bold;
+      text-align: justify;
+      float: inherit;
+
+
+    }
+
+    .custom-sele {
+      position: relative;
+      font-family: 'Spartan', sans-serif;
+      width: 300px;
+      margin-top: 40px;
+      align-items: stretch;
+      justify-content: center;
+      margin-left: 120px;
+
+    }
+
+    .custom-sele select {
+      display: none;
+    }
+
+    .select-selected {
+      background-color: rgb(150, 165, 25);
+      border-radius: 15px;
+
+    }
+
+
+    .select-selected:after {
+      position: absolute;
+      content: "";
+      top: 14px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-color: #fff transparent transparent transparent;
+
+    }
+
+    .phone {
+      visibility: hidden;
+    }
+
+    .select-selected.select-arrow-active:after {
+      border-color: transparent transparent #fff transparent;
+      top: 7px;
+    }
+
+
+    .select-items div,
+    .select-selected {
+      color: #ffffff;
+      padding: 8px 16px;
+      border: 1px solid transparent;
+      border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+      cursor: pointer;
+      user-select: none;
+
+    }
+
+    .select-items {
+      position: absolute;
+      background-color: rgb(150, 165, 25);
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      border-radius: 15px;
+    }
+
+
+    .select-hide {
+      display: none;
+    }
+
+    .select-items div:hover,
+    .same-as-selected {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 400px) {
+
+      .butone,
+      .custom-sele {
+        width: 20%;
+        margin-top: 10px;
+        height: 15px;
+        border: 5px;
+        font-size: 3px;
+        text-indent: -8px;
+        margin-left: 130px;
+        right: 100px;
+      }
+
+      .select-items {
+        top: 21px;
+        width: 50px;
+        font-size: 3px;
+
+
+      }
+
+      .bmi,
+      .ethnicity,
+      .weight,
+      .age,
+      .gender {
+        margin-top: 40px;
+      }
+
+      .bmi {
+        position: absolute;
+        margin-left: -180px;
+      }
+
+      .weight {
+        position: absolute;
+        margin-left: -130px;
+      }
+
+      .ethnicity {
+        position: absolute;
+        margin-left: -78px;
+      }
+
+      .gender {
+        position: absolute;
+        margin-left: -26px;
+      }
+
+      .age {
+        position: absolute;
+        margin-left: 26px;
+      }
+
+      .butone {
+        position: absolute;
+        right: 90px;
+        top: 100px;
+        width: 65%;
+      }
+
+      .logo {
+        top: 10px;
+      }
+
+      .info {
+        top: 32px;
+        border: 2px solid rgb(150, 165, 25);
+      }
+
+      .select-selected:after {
+        position: absolute;
+        content: "";
+        top: 10px;
+        right: 2px;
+        width: 0;
+        height: 0;
+        border: 3px solid transparent;
+        border-color: #fff transparent transparent transparent;
+
+
+      }
+
+      .phone {
+        position: absolute;
+        visibility: visible;
+        height: 100px;
+        width: 80px;
+        right: 10px;
+        top: 50px;
+      }
+
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <img class="phone" src="phone.png" alt="Anthony Nolan Phone">
+  <img class="logo" src="logo.png" alt="Anthony Nolan Logo">
+  <div id="buttons">
+    <div class="text">
+
+      <div class="info">
+        <p>Disclaimer! This test is not an official test from the Anthony Nolan Trust, rather you could use this to
+          loosely base your odds of going on to donate if you joined the register now.</p>
+      </div>
+      <form action="tester.php" method="POST">
+        <div class="age">
+          <div class="custom-sele">
+            <select name="age" width="50" required>
+              <option selected disabled value="">Age</option>
+              <option value=16ole>Younger than 16</option>
+              <option value=16-30>16 - 30</option>
+              <option value=30omo>Older than 30 and on the register</option>
+              <option value=30omon>Older than 30 and not on the register</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="gender">
+          <div class="custom-sele">
+            <select name="gender" required>
+              <option selected disabled value="">Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ethnicity">
+          <div class="custom-sele">
+            <select name="ethnicity" required>
+              <option selected disabled value="">Ethnicity</option>
+              <option value=white>White</option>
+              <option value=black>Black</option>
+              <option value=asian>Asian</option>
+              <option value=other>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="weight">
+          <div class="custom-sele">
+            <select name="weight" required>
+              <option selected disabled value="">Weight</option>
+              <option value=50ole>Fewer than 50kg</option>
+              <option value=50omo>50kg or more</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="bmi">
+          <div class="custom-sele">
+            <select name="BMI" required>
+              <option selected disabled value="">BMI</option>
+              <option value=40ole>Less than 40</option>
+              <option value=40omo>More than 40</option>
+            </select>
+          </div>
+        </div>
+
+
+        <button type="submit" class="butone">Submit</button>
+
+    </div>
+    </form>
+  </div>
+
+
+  <script>var x, i, j, selElmnt, a, b, c;
+  
+    x = document.getElementsByClassName("custom-sele");
+    for (i = 0; i < x.length; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+   
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+    
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 1; j < selElmnt.length; j++) {
+    
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function (e) {
+         
+          var y, i, k, s, h;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          h = this.parentNode.previousSibling;
+          for (i = 0; i < s.length; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+              s.selectedIndex = i;
+              h.innerHTML = this.innerHTML;
+              y = this.parentNode.getElementsByClassName("same-as-selected");
+              for (k = 0; k < y.length; k++) {
+                y[k].removeAttribute("class");
+              }
+              this.setAttribute("class", "same-as-selected");
+              break;
+            }
+          }
+          h.click();
+        });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+      a.addEventListener("click", function (e) {
+
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        this.classList.toggle("select-arrow-active");
+      });
+    }
+
+    function closeAllSelect(elmnt) {
+
+      var x, y, i, arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      for (i = 0; i < y.length; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i)
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+      for (i = 0; i < x.length; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+
+
+    document.addEventListener("click", closeAllSelect);</script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
